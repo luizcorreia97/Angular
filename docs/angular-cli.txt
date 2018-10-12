@@ -1,0 +1,67 @@
+$ npm install -g angular-cli
+// Requer node >= 4
+// https://github.com/angular/angular-cli
+
+ng lint - escaneia código e verifica conforme as boas práticas (Karma)
+ng test - teste unitários (Jasmine)
+ng e2e - teste com protractor (end-to-end)
+
+Angular-cli usa por baixo o EmberCli, extensão customizada.
+
+DIRETÓRIOS
+
+config - contém configuração para deploy/build e teste
+dist - onde é gerado o build da aplicação. Ignorado pelo git
+e2e - contém os scripts para testes end-to-end
+node_modules - contém os pacotes npm da app (package.json). Também ignorado pelo git
+public - diretório genérico que contém um arquivo .npmignore
+src - contém o código fonte da aplicação. Contém código typescript/javascript, CSS, imagens e templates HTML
+angular-cli.json - contém informações sobre o projeto e build de produçao, como nome do projeto, config de 
+onde encontrar os arquivos fontes da app, config de teste, etc
+tslint.json - contém	configurações para fazer lint da app
+
+DEPENDENCIES (PACKAGE.JSON)
+
+@angular/core - Pacote principal do framework Angular 2. Contém os decorators e metadados, Component, Directive, 
+injeção de dependência e os hooks de ciclo de vida do Component.
+@angular/common - Serviços, pipes e diretivas comuns fornecidas pelo time de dev do Angular.
+@angular/compiler - Template de compilação do angular. Entendo o código dos templates e converte em código que faz a
+app ser executada e renderizada. Desenvolvedores não interagem com esse pacote diretamente (apenas usamos seu código).
+@angular/forms - Contém todo o código para construção de formulários no angular 2.
+@angular/platform-browser - Contém todo o código relacionado ao DOM e ao browser, especialmente as partes que
+ajudam a renderizar o DOM. Esse pacote também contém o método para fazer o bootstrap da aplicação para builds de 
+produção que pré-compila os templates.
+@angular/platform-browser-dynamic - Contém os Providers e o método para iniciar as aplicações que compilam os templates no
+lado cliente. Não usa compilação offline. Usada para fazer bootstrap durante desenvolvimento e exemplos plunker.
+@angular/http - Fornece o cliente HTTP.
+@angular/router - Classes de roteamento.
+
+BIBLIOTECAS AUXILIARES (POLYFILLS.TS)
+
+core-js - permite compatibilidade de engines JS antigas com a especificação do ES 2015, ou seja, emula as funcionalidades 
+do ES 2015 (ES6) e ES 7 em browsers que suportam somente ES5.
+reflect-metadata - dependência compartilhada entre o Angular e o compilador Typescript. Permite o uso de decorators no código
+(annotations). Isso permite aos desenvolvedores fazer upgrade no Typescript sem precisar de fazer upgrade no Angular. Esse é
+o motivo desta ser dependência da aplicação e não do Angular.
+rxjs - extensão para a especificação dos Observables (programação assíncrona). Reactive extensions for Javascript.
+ts-helpers - biblioteca auxliar que permite otimização de código typescript quando o mesmo é compilado para ES 5.
+zone.js - extensão (plugins) útil para tarefas assíncronas (chamadas de Zones).
+
+@angular/cli: ferramenta de linha de comando para gerenciar projetos angular 2
+@angular/compiler-cli: ^5.2.0,
+@angular/language-service: ^5.2.0,
+@types/jasmine: definição jasmine para typescript (antigo typings)
+@types/jasminewd2: ~2.0.2,
+@types/node: ~6.0.60,
+codelyzer: lint (análise de código) para angular 2
+jasmine-core: arquivos principais jasmine para node.js
+jasmine-spec-reporter: relatório em tempo real para BDD com Jasmine
+karma: ferramenta de testes que cria um web server e executa código de teste em cada um dos browsers conectados
+karma-chrome-launcher: launcher do karma para o chrome
+karma-coverage-istanbul-reporter: adaptador para code coverage (relatório)
+karma-jasmine: adaptador para o jasmine
+karma-jasmine-html-reporter: ^0.2.2,
+protractor: definição protractor para typescript (antigo typings)
+ts-node: módulo typescript para node.js
+tslint: lint (análise de código) para typescript
+typescript: compilador typescript

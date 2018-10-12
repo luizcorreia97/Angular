@@ -1,0 +1,15 @@
+<div *ngIf="mostrarErro">
+    <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span> -->
+    <span class="sr-only">(error)</span>
+    <div class="alert alert-danger" role="alert">
+      {{ msgErro }}
+    </div>
+    <!-- <div class="invalid-feedback">
+      {{ msgErro }}
+    </div> -->
+</div>
+
+<div *ngIf="!mostrarErro">
+  <!-- <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> -->
+  <span class="sr-only">(success)</span>
+</div>

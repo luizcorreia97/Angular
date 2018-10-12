@@ -1,0 +1,57 @@
+angular cli
+
+criar projeto: ng new nome_projeto
+criar modulo: ng g m cursos (g = gerar, m = module)
+criar componente: ng g c cursos (g = gerar, c = component)
+criar servi�o: ng g s cursos
+
+quando usar formulario e chamada ajax com http: precisa importar FormsModule e HttpModule
+
+typescript: criar variavel:
+	nome_variavel:tipo (number, string)
+
+e pra acessar no constructor � usado o this.
+
+interpolation: acesar variavel do component.ts no component.html
+
+diretivas: *ngFor, *ngModel
+express�o: 
+
+arquivos:
+	.ts: componente
+	.spec.ts: fazer teste unit�rio da classe
+	.html: representa o template do componente
+	.csss: onde adiciona os estilos e personaliza��es do componente
+
+SERVI�OS:
+Componente -> Servi�o -> Backend (Node.Js, Java, .NET, Firebase, etc)
+
+Inje��o de dependencia: fazer com que o angular forne�a automaticamente uma inst�ncia da classe de servi�o pra fazer uso dela
+e simplesmente n�o ter que inst�nciar manualmente.
+
+decorator: @Injectable()
+
+DATA BINDING: forma de associar inf. do componente para o template
+Template < {{ valor }} Componenete (interpolation - valor do atribuito e tem saida dele no template)
+[propriedade] = "valor" (bind de proprieade - valor do atribuito e tem saida dele no template)
+(evento) = "handler" (evento do template: click do bot�o, focus do input - executa metodo do componente)
+[(ngModel)] = "propriedade" (to way data binding: conseguimos manter template e componente atualizados ao mesmo tempo)
+
+declara variavel local no template: #nome_variavel dentro da tag.
+
+ngModel: representa uma entidade (campo simples, objeto, etc)
+
+Input Property: recebe um valor do componente pai para o componente filho
+Output Property: exporevento/valor atrav�s de um evento disparado do componente filho para o componente pai
+
+ElementRef: é o que faz referência ao elemento do DOM
+Renderer: é o renderizador responsável por fazer manipulação no DOM
+
+Injeção de Dependência: ela cria estâncias automaticamente
+Singleton: apenas uma estância da classe pra toda a aplicação
+
+static: ao declarar a variavel com esse atributo, não precisa da estância da classe pra poder acessar o mesmo
+
+lazyloading / loadChildren: ajusta no routing root da app. ex: { path : 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule' }
+e o import do modulo em questão não pode estar em mais nenhum lugar (remove do app.module).
+e o caminho principal da rota fica vazio: path: ''
